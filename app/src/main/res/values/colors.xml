@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="second_black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="input_background_color">#FFF6F5</color>
+    <color name="input_hint_color">#1C2439</color>
+    <color name="red">#F71B33</color>
+    <color name="gray">#C4C4C4</color>
+    <color name="or_line">#DEDEDE</color>
+    <color name="forgot_password_text_color">#EA4335</color>
+</resources>

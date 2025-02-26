@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/searchInput"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:text="@string/main_title"
+        android:textSize="18sp"
+        android:textColor="@color/second_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintStart_toStartOf="@id/searchInput"
+        android:layout_marginTop="29dp"
+        android:layout_marginStart="9dp"
+        />
+    
+    <EditText
+        android:id="@+id/searchInput"
+        android:hint="@string/search_input"
+        style="@style/CustomInput"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="158dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:text="@string/category"
+        android:textSize="15sp"
+        android:textColor="@color/input_hint_color"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/searchInput"
+        app:layout_constraintStart_toStartOf="@id/searchInput"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="2dp"
+        />
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_category_holder"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

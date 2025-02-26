@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogInActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="130dp">
+
+        <EditText
+            android:id="@+id/emailInput"
+            android:hint="@string/email_input"
+            style="@style/CustomInput"/>
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:hint="@string/password_input"
+            android:inputType="textPassword"
+            style="@style/CustomInput"
+            android:layout_marginVertical="16dp"/>
+
+        <TextView
+            android:id="@+id/forgotPasswordText"
+            android:text="@string/forgot_password"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/forgot_password_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logInButton"
+            style="@style/LogInButton"
+            android:layout_marginTop="29dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
