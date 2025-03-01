@@ -4,15 +4,15 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 
 public class Category {
-    Drawable image;
+    int image;
     String text;
 
-    public Category(Drawable image, String text) {
+    public Category(int image, String text) {
         this.image = image;
         this.text = text;
     }
 
-    public Image getImage() {
+    public int  getImage() {
         return image;
     }
 

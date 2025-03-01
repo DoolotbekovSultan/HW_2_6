@@ -9,5 +9,8 @@
     <string name="main_title">Choose the\n<b>Food you love</b></string>
     <string name="sign_up_title">Sign up</string>
     <string name="category">Category</string>
+    <string name="category_burgers">Burgers</string>
+    <string name="category_pizza">Pizza</string>
+    <string name="category_chicken">Chicken</string>
     <string name="or">OR</string>
 </resources>

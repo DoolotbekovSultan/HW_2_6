@@ -7,6 +7,8 @@
     <color name="input_hint_color">#1C2439</color>
     <color name="red">#F71B33</color>
     <color name="gray">#C4C4C4</color>
+    <color name="yellow">#F6FB05</color>
+    <color name="gray2">#999999</color>
     <color name="or_line">#DEDEDE</color>
     <color name="forgot_password_text_color">#EA4335</color>
 </resources>
