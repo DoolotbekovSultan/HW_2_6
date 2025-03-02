@@ -1,5 +1,6 @@
 package com.sultan.hw_2_6;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -13,11 +14,9 @@ import java.util.ArrayList;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private ArrayList<Category> categories;
-    private CategoryAdapter.OnCategoryClickListener onCategoryClickListener;
 
-    public CategoryAdapter(ArrayList<Category> categories, OnCategoryClickListener onCategoryClickListener) {
+    public CategoryAdapter(ArrayList<Category> categories) {
         this.categories = categories;
-        this.onCategoryClickListener = onCategoryClickListener;
     }
 
     @NonNull
@@ -37,6 +36,24 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         return categories.size();
     }
 
+    public void search(String string) {
+        string = string.toLowerCase();
+        for (int i = 0; i < getItemCount(); i ++) {
+            if (categories.get(i).getText().toLowerCase().equals(string)) {
+                moveToFirst(i);
+                return;
+            }
+        }
+    }
+
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void moveToFirst(int currentPosition) {
+        Category currentCategory = categories.remove(currentPosition);
+        categories.add(0, currentCategory);
+        notifyDataSetChanged();
+    }
+
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
 
         private ItemCategoryHolderBinding binding;
@@ -46,21 +63,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             this.binding = binding;
         }
 
+
         public void bind(Category category, int position){
-            binding.categoryImage.setImageResource(category.getImage());
             binding.categoryText.setText(category.getText());
             if (position == 0) {
                 binding.cardView.setBackgroundResource(R.drawable.ic_active_category_background);
+                binding.categoryImage.setImageResource(category.getImages()[1]);
             } else {
                 binding.cardView.setBackgroundResource(R.drawable.ic_category_background);
+                binding.categoryImage.setImageResource(category.getImages()[0]);
             }
             binding.getRoot().setOnClickListener(view -> {
-                onCategoryClickListener.onCategoryClick(category);
+                int currentPosition = getAdapterPosition();
+                moveToFirst(currentPosition);
             });
         }
-    }
-
-    public interface OnCategoryClickListener {
-        void onCategoryClick(Category category);
     }
 }
