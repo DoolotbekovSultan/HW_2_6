@@ -13,4 +13,6 @@
     <string name="category_pizza">Pizza</string>
     <string name="category_chicken">Chicken</string>
     <string name="or">OR</string>
+    <string name="sign_with_google">Sign in with Google</string>
+    <string name="sign_with_facebook">Sign in with Facebook</string>
 </resources>

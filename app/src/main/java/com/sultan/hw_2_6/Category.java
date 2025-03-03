@@ -1,8 +1,5 @@
 package com.sultan.hw_2_6;
 
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-
 public class Category {
     int[] images;
     String text;

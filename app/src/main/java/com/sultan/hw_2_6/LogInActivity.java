@@ -38,7 +38,14 @@ public class LogInActivity extends AppCompatActivity {
             if (emailText.equals("admin") && passwordText.equals("admin")) {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
+        });
+
+        binding.forgotPasswordText.setOnClickListener(view -> {
+            Intent intent = new Intent(this, SignUpActivity.class);
+            startActivity(intent);
+            finish();
         });
 
     }
